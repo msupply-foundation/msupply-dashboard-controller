@@ -1,0 +1,9 @@
+{
+  "name": "msupply-dashboard-controller",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "https://github.com/openmsupply/msupply-dashboard-controller.git",
+  "author": "Will Thomson <will.tho@outlook.com>",
+  "license": "MIT",
+  "private": false
+}
