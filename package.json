@@ -8,6 +8,7 @@
   "private": false,
   "dependencies": {
     "axios": "^0.19.0",
-    "commander": "^2.20.0"
+    "commander": "^2.20.0",
+    "jest": "^24.8.0"
   }
 }
