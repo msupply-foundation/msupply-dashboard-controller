@@ -1,23 +1,18 @@
-const postDashboard = require('./requests/dashboard.js');
+const { getData } = require('./data/data.js')
+const { getRequests } = require('./requests/requests.js');
 
-const baseURL = 'localhost::3000';
-const auth = { 
-  username: 'admin',
-  password: 'admin'
-};
-const data = {
-  dashboard: {
-    id: null,
-    uid: null,
-    title: 'mSupply Demo',
-    tags: [ 'mSupply' ],
-    timezone: 'browser',
-    schemaVersion: 1,
-    version: 1
-  },
-  folderId: 0,
-  overwrite: false
-};
+const data = getData('demo.json');
 
-postDashboard(baseURL, auth, data).then(res => console.log(res)).catch(error => console.log(error));
+const { host, port, username, password, dashboards } = data;
 
+const config = {
+  baseURL: host + "::" + port,
+  auth: { username, password }
+}
+
+const { createDashboard } = getRequests(config);
+
+dashboards.forEach(dashboard => {
+  console.log(dashboard);
+  createDashboard(dashboard).then(res => console.log(res)).catch(err => console.log(err));  
+});
