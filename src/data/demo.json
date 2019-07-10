@@ -1,0 +1,21 @@
+{
+  "host": "localhost", 
+  "port": "3000",
+  "username": "admin",
+  "password": "admin",
+  "dashboards": [
+    { 
+      "dashboard": {
+        "id": null,
+        "uid": null,
+        "title": "mSupply Demo",
+        "tags": [ "mSupply" ],
+        "timezone": "browser",
+        "schemaVersion": 1,
+        "version": 1
+      },
+    "folderId": 0,
+    "overwrite": false
+    }
+  ]
+}
