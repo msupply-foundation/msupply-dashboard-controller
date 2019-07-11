@@ -1,0 +1,12 @@
+# MacOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Dependencies
+node_modules/
+
+# Yarn
+yarn-debug.log*
+yarn-error.log*
+.yarn-integrity
