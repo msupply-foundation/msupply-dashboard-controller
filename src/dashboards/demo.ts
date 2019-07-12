@@ -1,6 +1,6 @@
-const stockValue = require('./panels/stockValue.js')
+import stockValue from './panels/stockValue.js';
 
-const dashboard = {
+const demo: Dashboard = {
   "id": null,
   "uid": null,
   "title": "mSupply Demo",
@@ -8,9 +8,6 @@ const dashboard = {
   "tags": [ "mSupply" ],
   "style": "dark",
   "version": 1,
-}
-
-const variables = {
   "templating": {
     "list": [
       {
@@ -28,4 +25,4 @@ const variables = {
   }
 }
 
-module.exports = { ...dashboard, ...variables }
+export default demo;
