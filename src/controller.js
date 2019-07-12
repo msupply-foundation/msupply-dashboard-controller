@@ -1,9 +1,21 @@
-const { getData } = require('./data/data.js')
+const fs = require('fs');
+const path = require('path');
+
+const demo = require('./dashboards/demo.js')
 const { getRequests } = require('./requests/requests.js');
 
-const data = getData('demo.json');
+const host = "localhost";
+const port = "3000";
+const username = "admin";
+const password = "admin";
 
-const { host, port, username, password, dashboards } = data;
+const getJSON = (filename) => {
+  const filepath = path.join(__dirname, filename);
+  const dataRaw = fs.readFileSync(filepath);
+  const dataJson = JSON.parse(dataRaw);
+
+  return dataJson;
+}
 
 const config = {
   baseURL: host + "::" + port,
@@ -12,7 +24,8 @@ const config = {
 
 const { createDashboard } = getRequests(config);
 
-dashboards.forEach(dashboard => {
-  console.log(dashboard);
-  createDashboard(dashboard).then(res => console.log(res)).catch(err => console.log(err));  
-});
+const dashboard = { "dashboard": demo };
+
+console.log(dashboard);
+
+createDashboard(dashboard).then(res => console.log(res)).catch(err => console.log(err));  
